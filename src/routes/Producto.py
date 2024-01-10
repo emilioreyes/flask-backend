@@ -1,4 +1,5 @@
 from flask import Blueprint,jsonify,request
+from flask_jwt_extended import jwt_required
 #entities
 from models.entities.Producto import Producto
 
@@ -7,6 +8,7 @@ from models.ProductoModel import ProductoModel
 main=Blueprint("productos_blueprint ",__name__)
 
 @main.route("/")
+@jwt_required()
 def get_productos():
     try:
         productos=ProductoModel.get_Productos()
@@ -16,6 +18,7 @@ def get_productos():
     
 
 @main.route("/<id>")
+@jwt_required()
 def getProducto(id):
     try:
         producto=ProductoModel.get_Producto(id)

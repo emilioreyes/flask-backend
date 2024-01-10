@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   app:
-    container_name: flask_app
+    container_name: flask_api
     build: 
       context: .
       dockerfile: Dockerfile
@@ -16,28 +16,28 @@ services:
     networks:
       backend_net:
         aliases:
-          - emi_flask
+          - flask_net
 
   
   db:
     build:
       context: .
       dockerfile: db.Dockerfile
-    container_name: mysql_flask_db
+    container_name: mysql_db
     ports:
       - "3306:3306"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Hol@2023
+      MYSQL_ROOT_PASSWORD: pr@ct1c@
       MYSQL_DATABASE: "store"
       MYSQL_USER: "emilio"
-      MYSQL_PASSWORD: "Hol@2023"
+      MYSQL_PASSWORD: "pr@ct1c@"
     volumes:
       - ./schemas:/var/lib/mysql
     networks:
       backend_net:
         aliases:
-          - emi_db
+          - mysql_net
 volumes:
   schemas: {}
   

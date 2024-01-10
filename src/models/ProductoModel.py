@@ -1,6 +1,5 @@
 from database.db import get_conection
 from .entities.Producto import Producto
-import pymysql.cursors
 class ProductoModel():
 
     @classmethod
