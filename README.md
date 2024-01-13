@@ -6,6 +6,9 @@
    - execute `docker exec -it flask_api /bin/sh`
    - in flask_api terminal execute `ping mysql_db` 
  - for test this project you can use postman or download `https://github.com/emilioreyes/angular_docker.git`
+ - url for login `http://localhost:4000/api/login`
+ - url for get product list `http://localhost:4000/api/productos/`
+ - yoy can se the fake credentials in `src/database/init.sql` in `users` table
 
 ## Note
 - this project have `proxy.conf.json` to consume the dockerized backend, you should change the  `"target":"http://your.locol.ip.address:4000",`
